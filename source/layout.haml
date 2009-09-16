@@ -1,0 +1,33 @@
+!!! 5
+
+%html
+
+  %head
+
+    %meta{ charset: 'utf-8' }
+
+    %meta{ :'http-equiv' => 'X-UA-Compatible', content: 'IE=edge,chrome=1' }
+    %meta{ :'http-equiv' => 'Content-Type',    content: 'text/html; charset=utf-8' }
+
+    %meta{ name: 'description', content: 'Future Hope People is a help organization that organizes sustainable development aid in Ghana.' }
+
+    %title
+      - if current_page.data.title
+        = current_page.data.title
+        &middot;
+      Future Hope People - Sustainable development aid for Ghana
+
+    %link{ rel: 'shortcut icon', type: 'image/x-icon', href: image_path('favicon.ico') }
+    %link{ rel: 'canonical', href: config[:host] + current_page.url }
+
+    = stylesheet_link_tag :site
+
+    = partial 'scripts'
+
+  %body{ id: current_page.data.id }
+    #fb-root
+    .container
+      = yield
+    = partial 'cookie-bar'
+    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'
+    = javascript_include_tag :site

@@ -1,0 +1,32 @@
+#= require jquery-cookie
+#= require fancybox/jquery.fancybox
+
+LANGUAGE_COOKIE_NAME = 'fhpeople-lang'
+COOKIE_OPTIONS =
+  path: '/'
+  expires: 365
+
+$ ->
+  $('a.fancybox').fancybox()
+  watchLanguageLinks()
+  if $('body#choose-language').length
+    checkLanguageCookie()
+  unless $.cookie('cookie-consent')?
+    cookieBar = $('#cookie-bar')
+    cookieBar
+      .slideDown()
+      .find('a')
+      .click (e) ->
+        e.preventDefault()
+        $.cookie 'cookie-consent', 'true', COOKIE_OPTIONS
+        cookieBar.slideUp()
+
+checkLanguageCookie = ->
+  if $.cookie(LANGUAGE_COOKIE_NAME)
+    window.location += $.cookie(LANGUAGE_COOKIE_NAME)
+
+watchLanguageLinks = ->
+  $('#lang-en-link').click ->
+    $.cookie LANGUAGE_COOKIE_NAME, 'en/', COOKIE_OPTIONS
+  $('#lang-de-link').click ->
+    $.cookie LANGUAGE_COOKIE_NAME, 'de/', COOKIE_OPTIONS

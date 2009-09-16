@@ -1,0 +1,48 @@
+= wrap_layout :layout do
+  #sidebar.span-6
+
+    %h1
+      Future Hope People - Sustainable development aid for Ghana
+
+    %p
+      - if current_language == 'en'
+        Switch language:
+        %br
+        = link_to current_page.url =~ %r(/en/) ? current_page.url.sub(%r(^/en/), '/de/') : '/en/', id: 'lang-de-link', title: 'Auf Deutsch' do
+          = image_tag 'de.png', alt: 'Auf Deutsch'
+      - else
+        Sprache ändern:
+        %br
+        = link_to current_page.url =~ %r(/de/) ? current_page.url.sub(%r(^/de/), '/en/') : '/de/', id: 'lang-en-link', title: 'In English' do
+          = image_tag 'en.png', alt: 'In English'
+
+  #body.span-18.last
+
+    #header.span-18.last
+      - if current_language
+        - raise StandardError, 'Set an ID!' if current_page.data.id.nil?
+        = image_tag "headers/#{current_page.data.id}.jpg", alt: 'Future Hope People - Sustainable development aid for Ghana - Header'
+
+    #menu.span-18.last
+      %ul
+        - menu_items.each do |item, path|
+          - current = (path == '' && current_page.url == "/#{current_language}/") || current_page.url == "/#{current_language}/#{path}/"
+          %li{ class: current ? 'current' : nil }
+            = link_to item, "/#{current_language}/#{path}"
+
+      %div{ style: 'clear: left' }
+
+    #content.span-18.last
+      %h2
+        = current_page.data.title
+      %hr
+      = yield
+
+    #footer.span-18.last
+      %hr
+      - footer_menu_items.each do |item, path|
+        - classes = %w(small)
+        - classes << 'current' if current_page.url == "/#{current_language}/#{path}"
+        = link_to item.mb_chars.upcase, "/#{current_language}/#{path}", class: classes.join(' ')
+        - unless item == footer_menu_items.keys.last
+          &middot;

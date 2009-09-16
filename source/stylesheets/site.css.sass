@@ -1,0 +1,273 @@
+@import "blueprint/screen"
+@import "fancybox/jquery.fancybox"
+@import "cookie-bar"
+
+$red:    #F94000
+$yellow: #F9FF8F
+
+body
+  font-size: 16px
+  font-family: Helvetica, Arial, sans-serif
+
+p
+  margin: 0 0 4px
+
+h2,
+h3,
+h4,
+h5,
+h6
+  color: $red
+  font-family: Georgia, Times, Times New Roman, serif
+
+h1
+  text-indent: -9999px
+  width: 100%
+  height: 494px
+  background: image-url("logo.jpg") center center no-repeat
+
+h2
+  font-size: 1.6rem
+  margin: 0
+
+h3
+  clear: left
+  font-size: 20px
+  margin: 14px 0 8px
+
+h4
+  font-size: 16px
+  margin: 12px 0 6px
+
+hr
+  width: 100%
+  clear: none
+
+.fb-like-box
+  float: right
+
+#news
+  border-radius: 3px
+  padding: 10px
+  background-color: $yellow
+  margin: 10px 0
+
+#landing-page
+
+  div
+    text-align: center
+
+  h1
+    margin-top: 30px
+
+  h2
+    margin: 100px 10px
+    color: #000
+    font-family: inherit
+
+    a
+      letter-spacing: 2px
+      color: $red
+      padding-left: 40px
+
+      &#lang-de-link
+        background: image-url("de.png") no-repeat center left
+
+      &#lang-en-link
+        background: image-url("en.png") no-repeat center left
+
+.invisible
+  display: none
+
+.container
+  margin-top: 20px
+
+  #sidebar
+    margin-top: 10px
+    text-align: center
+
+    p
+      margin-top: 50px
+
+  #body
+
+    #header
+      margin-top: 29px
+      height: 180px
+
+      img
+        height: 180px
+        width: 710px
+        border-top-left-radius: 3px
+        border-top-right-radius: 3px
+
+    #menu
+      margin-bottom: 20px
+      background-color: $red
+      border-bottom-left-radius: 3px
+      border-bottom-right-radius: 3px
+
+      ul
+        list-style-type: none
+        margin: 0
+
+        li
+          display: inline-block
+          width: 142px
+          float: left
+          text-align: center
+          color: #EEE
+          letter-spacing: 1px
+
+          a
+            display: inline-block
+            width: 130px
+            line-height: 37px
+            margin-top: 3px
+            text-decoration: none
+            color: #fff
+            border-top-left-radius: 5px
+            border-top-right-radius: 5px
+
+            &:hover
+              color: #eee
+
+          &.current
+
+            a
+              background-color: #FFF
+              color: #000
+              font-weight: bold
+
+    #content
+
+      table
+        width: auto
+
+        &#donation-account
+          width: 100%
+
+          th
+            width: 15%
+
+          td
+            padding-left: 25px
+
+        &#partners
+          margin-top: 20px
+
+          tr,
+          td
+            padding-bottom: 30px
+
+          td.description
+            padding-left: 15px
+
+        &#contact
+
+          td:first-child
+            padding-right: 30px
+
+      th,
+      td
+        vertical-align: top
+        padding: 0
+
+      ul
+        margin: 0 0 10px 25px
+
+      img
+
+        &#kissi,
+        &#takinta,
+        &#ahobre
+          float: left
+          padding: 0 10px 14px 6px
+
+      a#betterplace-link
+        display: inline-block
+        text-align: center
+        width: 254px
+        padding-bottom: 65px
+        background: image-url("betterplace.png") no-repeat bottom center
+
+      .hidden
+        display: none
+
+      .images,
+      .experience-reports
+        text-align: center
+        margin-top: 20px
+
+      .images
+
+        a
+          text-decoration: none
+
+          img
+            border: 1px solid #ccc
+            margin-bottom: 20px
+
+      .experience-reports
+
+        a
+          display: inline-block
+          width: 110px
+          padding-top: 50px
+          margin-left: 30px
+          margin-bottom: 20px
+          background: image-url("doc.png") no-repeat top center
+
+          &.first
+            margin-left: 0
+
+    #blog
+      float: right
+      padding: 10px
+      background-color: $yellow
+      border: 1px solid #CCC
+      border-radius: 3px
+
+      .date
+        font-size: 0.8em
+        margin-bottom: 5px
+
+      h3
+        line-height: 1.3em
+        margin: 0
+
+      a
+        text-decoration: none
+        color: #000
+
+      p
+        margin-bottom: 10px
+
+      #all-entries
+        width: 100%
+        text-align: center
+
+  #footer
+    margin-top: 20px
+
+    a
+      text-decoration: none
+      color: $red
+
+      &:hover,
+      &.current
+        text-decoration: underline
+
+body#about-us
+
+  .person
+    margin-top: 20px
+    overflow: auto
+
+    img
+      float: left
+      margin: 0 20px 20px 0
+
+    h4
+      margin: 0 0 10px
+      color: inherit
