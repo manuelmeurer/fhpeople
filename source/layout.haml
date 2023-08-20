@@ -26,6 +26,7 @@
 
   %body{ id: current_page.data.id }
     #fb-root
+    = javascript_include_tag "https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v17.0&appId=301538239997253&autoLogAppEvents=1", nonce: "bi4cttCA", async: true, defer: true, crossorigin: "anonymous"
     .container
       = yield
     = partial 'cookie-bar'

@@ -1,4 +1,5 @@
-.fb-page{ data: { href: 'https://www.facebook.com/FutureHopePeople', :'hide-cover' => 'false', :'show-facepile' => 'true', :'show-posts' => 'true' } }
-  .fb-xfbml-parse-ignore
-    %blockquote{ cite: 'https://www.facebook.com/FutureHopePeople' }
-      = link_to 'https://www.facebook.com/FutureHopePeople', 'Future Hope People'
+- facebook_page_url = "https://www.facebook.com/FutureHopePeople"
+
+.fb-page{ data: { href: facebook_page_url, tabs: "timeline", "small-header": true, "adapt-container-width": true, "hide-cover": false, "show-facepile": true }
+  %blockquote.fb-xfbml-parse-ignore{ cite: facebook_page_url }
+    = link_to facebook_page_url, "Future Hope People"
